@@ -53,10 +53,10 @@ You can choose list`s type.
 
 ## Output data
 
-| Field | Type     | Description                              |
-| ----- | -------- | ---------------------------------------- |
-| style | `string` | type of a list: `ordered` or `unordered` |
-| items | `Item[]` | the array of list's items                |
+| Field | Type     | Description                                        |
+| ----- | -------- | -------------------------------------------------- |
+| style | `string` | type of a list: `ordered` or `unordered` or `none` |
+| items | `Item[]` | the array of list's items                          |
 
 Object `Item`:
 
