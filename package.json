@@ -1,11 +1,13 @@
 {
-  "name": "@calumk/nested-checklist",
-  "version": "1.0.3",
-  "description": "Nested list Tool, with checkboxes for EditorJS",
-  "main": "dist/nested-checklist.bundle.js",
-  "repository": "https://github.com/nested-list.git",
-  "author": "Calum Knot <calum@calumk.com>",
+  "name": "@calumk/editorjs-codeflask",
+  "description": "Codeflask, for EditorJS",
+  "version": "1.0.4",
+
+  "author": "Calum Knott",
+  "repository": "https://github.com/calumk/editorjs-nested-checklist",
   "license": "MIT",
+
+  "main": "./dist/editorjs-nested-checklist.bundle.js",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch",

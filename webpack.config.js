@@ -2,6 +2,13 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
+  output: {
+    filename: 'editorjs-nested-checklist.bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: 'editorjsNestedChecklist',
+    libraryExport: 'default',
+    libraryTarget: 'umd',
+  },
   module: {
     rules: [
       {
@@ -26,12 +33,5 @@ module.exports = {
   },
   resolve: {
     extensions: [ '.js' ],
-  },
-  output: {
-    filename: 'nested-checklist.bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    library: 'NestedChecklist',
-    libraryTarget: 'umd',
-    libraryExport: 'default',
-  },
+  }
 };

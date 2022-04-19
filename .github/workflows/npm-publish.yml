@@ -1,36 +1,15 @@
-name: Publish package to NPM
-
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: yarn
-      - run: yarn build
-      - run: yarn publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  notify:
-    needs: publish
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Get package info
-        id: package
-        uses: codex-team/action-nodejs-package-info@v1
-      - name: Send a message
-        uses: codex-team/action-codexbot-notify@v1
+          node-version: 10
+      - run: npm install
+      - run: npm run build
+      - uses: JS-DevTools/npm-publish@v1
         with:
-          webhook: ${{ secrets.CODEX_BOT_NOTIFY_EDITORJS_PUBLIC_CHAT }}
-          message: '📦 [${{ steps.package.outputs.name }}](${{ steps.package.outputs.npmjs-link }}) ${{ steps.package.outputs.version }} was published'
-          parse_mode: 'markdown'
-          disable_web_page_preview: true
+          token: ${{ secrets.NPM_TOKEN }}
