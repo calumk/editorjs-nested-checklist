@@ -253,22 +253,38 @@ export default class NestedList {
     }
 
     itemChecked.addEventListener("click", (el) => {
-      if(itemChecked.classList.contains('itemChecked_true')){
-        itemChecked.classList.remove('itemChecked_true')
-        itemChecked.classList.add('itemChecked_false')
-        return
-      }
-      if(itemChecked.classList.contains('itemChecked_false')){
-        itemChecked.classList.remove('itemChecked_false')
-        itemChecked.classList.add('itemChecked_null')
-        return
-      }
-      if(itemChecked.classList.contains('itemChecked_null')){
-        itemChecked.classList.remove('itemChecked_null')
-        itemChecked.classList.add('itemChecked_true')
-        return
+      if (!this.readOnly) {
+        if(itemChecked.classList.contains('itemChecked_true')){
+          itemChecked.classList.remove('itemChecked_true')
+          itemChecked.classList.add('itemChecked_false')
+          return
+        }
+        if(itemChecked.classList.contains('itemChecked_false')){
+          itemChecked.classList.remove('itemChecked_false')
+          itemChecked.classList.add('itemChecked_null')
+          return
+        }
+        if(itemChecked.classList.contains('itemChecked_null')){
+          itemChecked.classList.remove('itemChecked_null')
+          itemChecked.classList.remove('itemChecked_null_hover') // edge case
+          itemChecked.classList.add('itemChecked_true')
+          return
+        }
       }
     });
+
+    itemChecked.addEventListener("mouseenter", (el) => {
+      if (!this.readOnly) {
+        if(itemChecked.classList.contains('itemChecked_null')){
+          itemChecked.classList.add('itemChecked_null_hover')
+        }
+      }
+    })
+    itemChecked.addEventListener("mouseleave", (el) => {
+      if (!this.readOnly) {
+          itemChecked.classList.remove('itemChecked_null_hover')
+      }
+    })
 
     // const itemCheckedIndicator = Dom.make('div', this.CSS.itemCheckedIndicator);
     // itemCheckedIndicator.addEventListener("click", (el) => {
@@ -372,10 +388,17 @@ export default class NestedList {
    * @returns {HTMLOListElement|HTMLUListElement}
    */
   makeListWrapper(style = this.listStyle, classes = []) {
-    const tag = style === 'ordered' ? 'ol' : 'ul';
-    const styleClass = style === 'ordered' ? this.CSS.wrapperOrdered : this.CSS.wrapperUnordered;
+    const tag = 'ul'; // doesnt matter really, overridden with css
 
-    classes.push(styleClass);
+    if(style == "unordered"){
+      classes.push(this.CSS.wrapperUnordered);
+    }
+    if(style == "ordered"){
+      classes.push(this.CSS.wrapperOrdered);
+    }
+    if(style == "none"){
+      classes.push(this.CSS.wrapperNone);
+    }
 
     return Dom.make(tag, [this.CSS.wrapper, ...classes]);
   }

@@ -6,7 +6,7 @@ Multi-leveled lists for the [Editor.js](https://editorjs.io).
 
 Use `Tab` and `Shift+Tab` keys to create or remove sublist with a padding.
 
-![](assets/example.gif)
+![](example-media/Demo.gif)
 
 ## Installation
 
@@ -15,27 +15,13 @@ Use `Tab` and `Shift+Tab` keys to create or remove sublist with a padding.
 Get the package
 
 ```shell
-npm i --save @editorjs/nested-list
-```
-
-Or
-
-```shell
-yarn add @editorjs/nested-list
+npm i --save @calumk/editorjs-nested-checklist
 ```
 
 Include module at your application
 
 ```javascript
-import NestedList from '@editorjs/nested-list';
-```
-
-### Load from CDN
-
-Load the script from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@editorjs/nested-list) and connect to your page.
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/nested-list@latest"></script>
+import NestedCheckList from '@calumk/editorjs-nested-checklist';
 ```
 
 ## Usage
@@ -50,37 +36,40 @@ var editor = EditorJS({
   // ...
   tools: {
     ...
-    list: {
-      class: NestedList,
-      inlineToolbar: true,
+    nestedChecklist: {
+      class: NestedCheckList,
     },
   },
 });
 ```
 
 ## Config Params
-
 This Tool has no config params
 
 ## Tool's settings
 
-![](https://capella.pics/bf5a42e4-1350-499d-a728-493b0fcaeda4.jpg)
-
 You can choose list`s type.
+
+| Style     | Description                |
+| --------- | -------------------------- |
+| none      | No style, indentation only |
+| Ordered   | Numbered                   |
+| Unordered | Bullets                    |
+
 
 ## Output data
 
-| Field | Type      | Description                              |
-| ----- | --------- | ---------------------------------------- |
-| style | `string`  | type of a list: `ordered` or `unordered` |
-| items | `Item[]`  | the array of list's items                |
+| Field | Type     | Description                              |
+| ----- | -------- | ---------------------------------------- |
+| style | `string` | type of a list: `ordered` or `unordered` |
+| items | `Item[]` | the array of list's items                |
 
 Object `Item`:
 
-| Field   | Type      | Description               |
-| ------- | --------- | ------------------------- |
-| content | `string`  | item's string content     |
-| items   | `Item[]`  | the array of list's items |
+| Field   | Type     | Description               |
+| ------- | -------- | ------------------------- |
+| content | `string` | item's string content     |
+| items   | `Item[]` | the array of list's items |
 
 
 ```json
@@ -91,13 +80,16 @@ Object `Item`:
         "items" : [
             {
               "content": "Apples",
+              "checked": null,
               "items": [
                 {
                   "content": "Red",
+                  "checked" : true,
                   "items": []
                 },
                 {
                   "content": "Green",
+                  "checked" : false,
                   "items": []
                 },
               ]
@@ -107,6 +99,7 @@ Object `Item`:
               "items": [
                 {
                   "content": "Yellow",
+                  "checked" : true,
                   "items": []
                 },
               ]
