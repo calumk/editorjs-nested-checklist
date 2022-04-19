@@ -12,13 +12,7 @@ Use `Tab` and `Shift+Tab` keys to create or remove sublist with a padding.
 
 ### Install via NPM
 
-Get the package
-
-```shell
-npm i --save @calumk/editorjs-nested-checklist
-```
-
-Include module at your application
+    npm i @calumk/editorjs-codeflask
 
 ```javascript
 import NestedCheckList from '@calumk/editorjs-nested-checklist';
