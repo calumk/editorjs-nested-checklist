@@ -1,0 +1,29 @@
+{
+  "name": "@calumk/nested-checklist",
+  "version": "1.0.3",
+  "description": "Nested list Tool, with checkboxes for EditorJS",
+  "main": "dist/nested-checklist.bundle.js",
+  "repository": "https://github.com/nested-list.git",
+  "author": "Calum Knot <calum@calumk.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development --watch",
+    "lint": "eslint src/ --quiet",
+    "lint:errors": "eslint src/ --quiet",
+    "lint:fix": "eslint src/ --fix",
+    "build_yalc" : "webpack --mode production && yalc push"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.2",
+    "eslint": "^7.22.0",
+    "eslint-loader": "^4.0.2",
+    "postcss": "^8.2.6",
+    "postcss-loader": "^4.2.0",
+    "postcss-nested": "^5.0.3",
+    "postcss-nested-ancestors": "^2.0.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.1",
+    "webpack-cli": "^4.5.0"
+  }
+}
