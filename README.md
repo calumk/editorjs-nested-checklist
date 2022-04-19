@@ -24,7 +24,7 @@ Add the NestedList Tool to the `tools` property of the Editor.js initial config.
 
 ```javascript
 import EditorJS from '@editorjs/editorjs';
-import NestedList from '@editorjs/nested-list';
+import NestedCheckList from '@calumk/editorjs-nested-checklist';
 
 var editor = EditorJS({
   // ...
