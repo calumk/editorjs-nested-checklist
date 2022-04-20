@@ -1,7 +1,7 @@
 {
   "name": "@calumk/editorjs-nested-checklist",
   "description": "Nested Checklists, for EditorJS",
-  "version": "1.0.6",
+  "version": "1.0.7",
 
   "author": "Calum Knott",
   "repository": "https://github.com/calumk/editorjs-nested-checklist",
