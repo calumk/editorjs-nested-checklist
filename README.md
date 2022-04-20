@@ -1,41 +1,48 @@
-# Nested Check List Tool for Editor.js
+# EditorJs - Nested CheckList
+
+### NPM
+    npm i @calumk/editorjs-codeflask
+
+### JS
+    https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest
+    
+
+---
+
+# About
 
 Multi-leveled lists for the [Editor.js](https://editorjs.io).
 
-:fire: :fire: :fire: 
 This aims to supersede/replace all other EditorJs List blocks :fire: :fire: :fire:  
 
-## Use
-
-Use `Tab` and `Shift+Tab` keys to create or remove sublist with a padding.
+## Demo
 
 ![](example-media/Demo.gif)
 
-## Installation
+## Built with:
 
-### Install via NPM
+Built on-top of the official nested-list plugin, but with enough changes to warrent its own release
 
-    npm i @calumk/editorjs-nested-checklist
 
-```javascript
-import NestedCheckList from '@calumk/editorjs-nested-checklist';
-```
+## Use
+Use `Tab` and `Shift+Tab` keys to create or remove sublist with a padding.
 
-## Usage
+
+---
+
+## Use
 
 Add the NestedList Tool to the `tools` property of the Editor.js initial config.
 
 ```javascript
 import EditorJS from '@editorjs/editorjs';
-import NestedCheckList from '@calumk/editorjs-nested-checklist';
+import editorjsNestedChecklist from '@calumk/editorjs-nested-checklist';
 
 var editor = EditorJS({
   // ...
   tools: {
     ...
-    nestedChecklist: {
-      class: NestedCheckList,
-    },
+    nestedchecklist : editorjsNestedChecklist
   },
 });
 ```
