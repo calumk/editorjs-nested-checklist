@@ -231,7 +231,7 @@ export default class NestedList {
    * @returns {Element}
    */
   createItem(content, items = [], checked) {
-    console.log("Creating Item")
+    // console.log("Creating Item")
     const itemWrapper = Dom.make('li', this.CSS.item);
     const itemBody = Dom.make('div', this.CSS.itemBody);
     const itemCheckedContentWrapper = Dom.make('div', this.CSS.itemCheckedContentWrapper);
@@ -328,8 +328,8 @@ export default class NestedList {
     const getItems = (parent) => {
       const children = Array.from(parent.querySelectorAll(`:scope > .${this.CSS.item}`));
 
-      console.log("1) ++++++")
-      console.log(children)
+      // console.log("1) ++++++")
+      // console.log(children)
 
       return children.map(el => {
         const subItemsWrapper = el.querySelector(`.${this.CSS.itemChildren}`);
@@ -348,7 +348,7 @@ export default class NestedList {
         }
 
         const subItems = subItemsWrapper ? getItems(subItemsWrapper) : [];
-        console.log(content, " : ", checked)
+        // console.log(content, " : ", checked)
 
         return {
           content,

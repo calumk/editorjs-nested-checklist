@@ -1,8 +1,11 @@
-![](https://badgen.net/badge/Editor.js/v2.19.2/blue)
-
 # Nested Check List Tool for Editor.js
 
 Multi-leveled lists for the [Editor.js](https://editorjs.io).
+
+:fire: :fire: :fire: 
+This aims to supersede/replace all other EditorJs List blocks :fire: :fire: :fire:  
+
+## Use
 
 Use `Tab` and `Shift+Tab` keys to create or remove sublist with a padding.
 
@@ -102,3 +105,5 @@ Object `Item`:
     }
 },
 ```
+
+
