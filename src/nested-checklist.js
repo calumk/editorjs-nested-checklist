@@ -4,7 +4,8 @@ import Caret from './utils/caret';
 /**
  * Build styles
  */
-import './../styles/index.pcss';
+import style from './nested-checklist.pcss';
+import icon from './nested-checklist.svg';
 
 /**
  * @typedef {object} ListData
@@ -40,20 +41,6 @@ export default class NestedList {
    */
   static get enableLineBreaks() {
     return true;
-  }
-
-  /**
-   * Get Tool toolbox settings
-   * icon - Tool icon's SVG
-   * title - title to show in toolbox
-   *
-   * @returns {{icon: string, title: string}}
-   */
-  static get toolbox() {
-    return {
-      icon: '<svg width="17" height="13" viewBox="0 0 17 13" xmlns="http://www.w3.org/2000/svg"> <path d="M5.625 4.85h9.25a1.125 1.125 0 0 1 0 2.25h-9.25a1.125 1.125 0 0 1 0-2.25zm0-4.85h9.25a1.125 1.125 0 0 1 0 2.25h-9.25a1.125 1.125 0 0 1 0-2.25zm0 9.85h9.25a1.125 1.125 0 0 1 0 2.25h-9.25a1.125 1.125 0 0 1 0-2.25zm-4.5-5a1.125 1.125 0 1 1 0 2.25 1.125 1.125 0 0 1 0-2.25zm0-4.85a1.125 1.125 0 1 1 0 2.25 1.125 1.125 0 0 1 0-2.25zm0 9.85a1.125 1.125 0 1 1 0 2.25 1.125 1.125 0 0 1 0-2.25z"/></svg>',
-      title: 'Nested Checklist',
-    };
   }
 
   /**
@@ -920,4 +907,21 @@ export default class NestedList {
       }
     };
   }
+
+
+  /**
+   * Get Tool toolbox settings
+   * icon - Tool icon's SVG
+   * title - title to show in toolbox
+   *
+   * @returns {{icon: string, title: string}}
+   */
+     static get toolbox() {
+      return {
+          icon: icon,
+          title: 'Nested Checklist',
+      };
+    }
+
+
 }

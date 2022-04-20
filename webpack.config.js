@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/nested-checklist.js',
   output: {
-    filename: 'editorjs-nested-checklist.bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: 'editorjs-nested-checklist.bundle.js',
     library: 'editorjsNestedChecklist',
     libraryExport: 'default',
     libraryTarget: 'umd',
@@ -29,6 +29,15 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.svg$/,
+        use : [{
+            loader  : 'svg-inline-loader',
+            options : {
+                removeSVGTagAttrs : false
+            }
+        }]
+      }
     ],
   },
   resolve: {
