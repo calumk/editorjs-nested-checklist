@@ -1,7 +1,7 @@
 {
   "name": "@calumk/editorjs-nested-checklist",
   "description": "Nested Checklists, for EditorJS",
-  "version": "1.0.7",
+  "version": "1.0.8",
 
   "author": "Calum Knott",
   "repository": "https://github.com/calumk/editorjs-nested-checklist",
@@ -9,12 +9,7 @@
 
   "main": "./dist/editorjs-nested-checklist.bundle.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development --watch",
-    "lint": "eslint src/ --quiet",
-    "lint:errors": "eslint src/ --quiet",
-    "lint:fix": "eslint src/ --fix",
-    "build_yalc" : "webpack --mode production && yalc push"
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "css-loader": "^5.0.2",
