@@ -1,7 +1,7 @@
 # EditorJs - Nested CheckList
 
 ### NPM
-    npm i @calumk/editorjs-codeflask
+    npm i @calumk/editorjs-nested-checklist
 
 ### JS
     https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest
